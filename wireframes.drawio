@@ -1,1 +1,88 @@
-<mxfile host="app.diagrams.net" modified="2021-05-14T12:41:31.427Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" version="14.6.12" etag="8fTvEkCQydJ-ngtAyvlS" type="github"><diagram id="RHI5Xc2g9ze_QmDR5xgd">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-05-15T18:32:51.356Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" etag="UqmQMU7ygHYlKOf8WKjl" version="14.6.12" type="github">
+  <diagram id="RHI5Xc2g9ze_QmDR5xgd" name="Page-1">
+    <mxGraphModel dx="786" dy="495" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-1" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="240" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-2" value="Main Screen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="50" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-4" value="extrnl" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-10" value="Status&lt;br&gt;Indicator" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=0;shadow=0;glass=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="160" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-11" value="Source Selector" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="62.5" y="320" width="195" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-13" value="Source Details" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="62.5" y="380" width="195" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-14" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="240" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-15" value="Source List Screen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="377.5" y="50" width="125" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-16" value="sources" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="80" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-19" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/heroicons-ui/24/dots-horizontal-128.png;rounded=0;shadow=0;glass=0;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="250" y="86" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-21" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png;rounded=0;shadow=0;glass=0;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="530" y="86" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-22" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.left;rounded=0;glass=0;strokeColor=#000F1C;" vertex="1" parent="1">
+          <mxGeometry x="330" y="89" width="6" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-24" value="Source List Item" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="140" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-25" value="Source List Item" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="190" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-26" value="Source List Item" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-27" value="Source List Item" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;" vertex="1" parent="1">
+          <mxGeometry x="320" y="290" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-29" value="Delete" style="whiteSpace=wrap;html=1;aspect=fixed;rounded=0;shadow=0;glass=0;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="510" y="190" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-30" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.android.indeterminateSpinner;rounded=0;glass=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="116" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-31" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="240" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-32" value="Source Detail Screen" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;shadow=1;glass=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="657.5" y="50" width="125" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-33" value="source name" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;glass=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-34" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.left;rounded=0;glass=0;strokeColor=#000F1C;" vertex="1" parent="1">
+          <mxGeometry x="610" y="89" width="6" height="12" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-37" value="Hostname / IP" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="600" y="170" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-38" value="Port" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-39" value="Name" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;strokeColor=#000F1C;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HkIU7LzWfOP_DONfxtr2-40" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.check;rounded=0;glass=0;strokeColor=#00080F;" vertex="1" parent="1">
+          <mxGeometry x="820" y="91" width="10" height="8" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

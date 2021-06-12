@@ -17,3 +17,8 @@ export const renderDate = (date) => {
     const d = new Date(date);
     return `${d.getDate()} ${Months[d.getMonth()]} ${d.getFullYear()}`;
 };
+
+export const getYear = () => {
+    const d = new Date();
+    return `${d.getFullYear()}`;
+};

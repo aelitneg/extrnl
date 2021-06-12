@@ -6,10 +6,11 @@ import {
     Toolbar,
     Typography,
 } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
 import Head from 'next/head';
+import Link from 'next/link';
 
 const appBarTheme = createMuiTheme({
     palette: {
@@ -29,7 +30,16 @@ const theme = createMuiTheme({
     },
 });
 
+const useStyles = makeStyles({
+    logo: {
+        textDecoration: 'none',
+        cursor: 'pointer',
+    },
+});
+
 export default function Layout({ children }) {
+    const classes = useStyles();
+
     return (
         <div>
             <Head>
@@ -49,7 +59,14 @@ export default function Layout({ children }) {
                 <AppBar position="static">
                     <Container maxWidth="sm">
                         <Toolbar disableGutters>
-                            <Typography variant="h5">extrnl</Typography>
+                            <Link href={'/'} passHref>
+                                <Typography
+                                    variant="h5"
+                                    className={classes.logo}
+                                >
+                                    extrnl
+                                </Typography>
+                            </Link>
                         </Toolbar>
                     </Container>
                 </AppBar>

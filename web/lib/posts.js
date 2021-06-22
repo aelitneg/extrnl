@@ -10,7 +10,7 @@ const api = new GhostContentAPI({
 });
 
 export async function getPosts() {
-    return await api.posts.browse();
+    return await api.posts.browse({ filter: 'tag:extrnl+tag:blog' });
 }
 
 export async function getPost(slug) {

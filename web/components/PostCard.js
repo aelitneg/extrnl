@@ -17,6 +17,14 @@ const useStyles = makeStyles({
     },
 });
 
+const renderImage = (src) => {
+    if (!src) {
+        return null;
+    }
+
+    return <Image src={src} height={300} width={533} />;
+};
+
 export default function PostCard({ post }) {
     const classes = useStyles();
     return (
@@ -24,11 +32,7 @@ export default function PostCard({ post }) {
             <Card>
                 <CardActionArea>
                     <CardMedia className={classes.media}>
-                        <Image
-                            src={post.feature_image}
-                            height={300}
-                            width={533}
-                        />
+                        {renderImage(post.feature_image)}
                     </CardMedia>
                     <CardHeader
                         title={post.title}

@@ -1,8 +1,15 @@
-import { Box, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 import PostCard from '../components/PostCard';
-import { getPosts } from '../lib/posts';
+import { getPost, getPosts } from '../lib/posts';
 
+const useStyle = makeStyles((theme) => ({
+    card: {
+        backgroundColor: theme.palette.primary.main,
+        color: 'white',
+    },
+}));
 const renderPosts = (posts) => {
     return posts.map((p) => (
         <Box my={2} key={p.id}>
@@ -10,9 +17,25 @@ const renderPosts = (posts) => {
         </Box>
     ));
 };
-export default function Home({ posts }) {
+export default function Home({ content, posts }) {
+    const classes = useStyle();
+
     return (
         <Layout>
+            <Box mt={8} mb={4}>
+                <Typography variant="h2" color="primary">
+                    {content.title}
+                </Typography>
+            </Box>
+            <Box my={4}>
+                <Card variant="outlined" className={classes.card}>
+                    <CardContent>
+                        <span
+                            dangerouslySetInnerHTML={{ __html: content.html }}
+                        />
+                    </CardContent>
+                </Card>
+            </Box>
             <Typography variant="h4">Project updates</Typography>
             {renderPosts(posts)}
         </Layout>
@@ -20,9 +43,12 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-    const posts = await getPosts();
+    const [content, posts] = await Promise.all([
+        getPost('extrnl-home'),
+        getPosts(),
+    ]);
 
     return {
-        props: { posts },
+        props: { content, posts },
     };
 }

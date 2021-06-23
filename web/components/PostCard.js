@@ -6,7 +6,6 @@ import {
     CardMedia,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { renderDate } from '../lib/dateUtils';
@@ -22,7 +21,7 @@ const renderImage = (src) => {
         return null;
     }
 
-    return <Image src={src} height={300} width={533} />;
+    return <img src={src} height={300} width={533} />;
 };
 
 export default function PostCard({ post }) {

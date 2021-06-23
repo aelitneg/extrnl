@@ -1,5 +1,4 @@
 import { Typography } from '@material-ui/core';
-import Image from 'next/image';
 import { renderDate } from '../../lib/dateUtils';
 import { getPost, getPosts } from '../../lib/posts';
 import Layout from '../../components/Layout';
@@ -7,7 +6,7 @@ import Layout from '../../components/Layout';
 export default function Post({ post }) {
     return (
         <Layout>
-            <Image width={533} height={300} src={post.feature_image} />
+            <img width={533} height={300} src={post.feature_image} />
             <Typography variant="h4">{post.title}</Typography>
             <Typography variant="subtitle2">
                 {renderDate(post.published_at)}

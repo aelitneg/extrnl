@@ -22,11 +22,7 @@ export default function Home({ content, posts }) {
 
     return (
         <Layout>
-            <Box mt={8} mb={4}>
-                <Typography variant="h2" color="primary">
-                    {content.title}
-                </Typography>
-            </Box>
+            <Typography variant="h2">{content.title}</Typography>
             <Box my={4}>
                 <Card variant="outlined" className={classes.card}>
                     <CardContent>

@@ -35,8 +35,10 @@ export default function Layout({ children }) {
             <CssBaseline />
             <Header />
             <ThemeProvider theme={theme}>
-                <Container maxWidth="sm">
-                    <Box mt={4}>{children}</Box>
+                <Container maxWidth="md">
+                    <Box mt={4} mb={4}>
+                        {children}
+                    </Box>
                 </Container>
                 <Footer />
             </ThemeProvider>

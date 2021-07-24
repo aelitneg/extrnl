@@ -17,7 +17,7 @@ module.exports = {
     ],
     ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '!.prettierrc.js'],
     parserOptions: {
-        ecmaVersion: 8,
+        ecmaVersion: 9,
         ecmaFeatures: {
             jsx: true,
         },

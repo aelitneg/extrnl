@@ -23,8 +23,8 @@ export default function Header() {
 
     return (
         <ThemeProvider theme={theme}>
-            <AppBar position="static">
-                <Container maxWidth="sm">
+            <AppBar position="fixed">
+                <Container maxWidth="md">
                     <Toolbar disableGutters>
                         <Link href={'/'} passHref>
                             <Typography variant="h5" className={classes.logo}>
@@ -34,6 +34,9 @@ export default function Header() {
                     </Toolbar>
                 </Container>
             </AppBar>
+            <Toolbar>
+                {/* https://material-ui.com/components/app-bar/#fixed-placement*/}
+            </Toolbar>
         </ThemeProvider>
     );
 }

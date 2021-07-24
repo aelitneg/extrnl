@@ -10,24 +10,22 @@ const useStyle = makeStyles((theme) => ({
         color: 'white',
     },
 }));
+
 const renderPosts = (posts) => {
     return posts.map((p) => (
-        <Box my={2} key={p.id}>
+        <Box my={4} key={p.id}>
             <PostCard post={p} />
         </Box>
     ));
 };
+
 export default function Home({ content, posts }) {
     const classes = useStyle();
 
     return (
         <Layout>
-            <Box mt={8} mb={4}>
-                <Typography variant="h2" color="primary">
-                    {content.title}
-                </Typography>
-            </Box>
-            <Box my={4}>
+            <Typography variant="h2">{content.title}</Typography>
+            <Box mt={2} mb={6}>
                 <Card variant="outlined" className={classes.card}>
                     <CardContent>
                         <span

@@ -12,17 +12,9 @@ import { renderDate } from '../lib/dateUtils';
 
 const useStyles = makeStyles({
     media: {
-        height: 300,
+        height: 500,
     },
 });
-
-const renderImage = (src) => {
-    if (!src) {
-        return null;
-    }
-
-    return <img src={src} height={300} width={533} />;
-};
 
 export default function PostCard({ post }) {
     const classes = useStyles();
@@ -30,9 +22,10 @@ export default function PostCard({ post }) {
         <Link href={`/posts/${post.slug}`} passHref>
             <Card>
                 <CardActionArea>
-                    <CardMedia className={classes.media}>
-                        {renderImage(post.feature_image)}
-                    </CardMedia>
+                    <CardMedia
+                        className={classes.media}
+                        image={post.feature_image}
+                    ></CardMedia>
                     <CardHeader
                         title={post.title}
                         subheader={renderDate(post.published_at)}

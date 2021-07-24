@@ -1,4 +1,5 @@
 import { Box, Container, CssBaseline } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Head from 'next/head';
@@ -17,7 +18,17 @@ const theme = createMuiTheme({
     },
 });
 
+const useStyles = makeStyles({
+    fullHeight: {
+        display: 'flex',
+        minHeight: '100vh',
+        flexDirection: 'column',
+    },
+});
+
 export default function Layout({ children }) {
+    const classes = useStyles();
+
     return (
         <div>
             <Head>
@@ -33,13 +44,19 @@ export default function Layout({ children }) {
                 />
             </Head>
             <CssBaseline />
-            <Header />
-            <ThemeProvider theme={theme}>
-                <Container maxWidth="sm">
-                    <Box mt={4}>{children}</Box>
-                </Container>
-                <Footer />
-            </ThemeProvider>
+            <Box className={classes.fullHeight}>
+                <Header />
+                <ThemeProvider theme={theme}>
+                    <Box flex={1}>
+                        <Container maxWidth="md">
+                            <Box mt={4} mb={4}>
+                                {children}
+                            </Box>
+                        </Container>
+                    </Box>
+                    <Footer />
+                </ThemeProvider>
+            </Box>
         </div>
     );
 }

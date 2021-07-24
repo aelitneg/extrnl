@@ -6,7 +6,6 @@ import { getYear } from '../lib/dateUtils';
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.main,
-        flexGrow: 1,
     },
     item: {
         textAlign: 'center',
@@ -24,7 +23,7 @@ export default function Footer() {
     const classes = useStyles();
 
     return (
-        <Container className={classes.root}>
+        <Container maxWidth={false} className={classes.root}>
             <Grid container justify="center" className={classes.root}>
                 <Grid item xs={12} className={classes.item}>
                     <Box p={4}>

@@ -6,7 +6,6 @@ import { getYear } from '../lib/dateUtils';
 const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: theme.palette.primary.main,
-        flexGrow: 1,
     },
     item: {
         textAlign: 'center',

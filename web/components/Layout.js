@@ -1,22 +1,11 @@
 import { Box, Container, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Head from 'next/head';
 
+import theme from '../styles/theme';
 import Header from './Header';
 import Footer from './Footer';
-
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            main: '#197de6',
-        },
-        secondary: {
-            main: '#17e27d',
-        },
-    },
-});
 
 const useStyles = makeStyles({
     fullHeight: {

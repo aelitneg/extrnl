@@ -14,8 +14,16 @@ public:
 
     void initialise(const juce::String &commandLine) override
     {
+        // Initialise app state
         appState = juce::ValueTree(State::appStateNode);
-
+        
+        // Initialise transport state
+        appState.addChild(juce::ValueTree(State::transportStateNode), -1, nullptr);
+        appState.getChildWithName(State::transportStateNode).setProperty(State::transportState,
+                                                                         State::TransportState::Stopped,
+                                                                         nullptr);
+        
+        
         mainWindow.reset(new MainWindow(getApplicationName(), appState));
     }
 

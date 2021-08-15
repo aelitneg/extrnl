@@ -4,7 +4,10 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="mjzqMA" name="Extrnl">
     <GROUP id="{8930996A-07A6-08B1-7BBB-E3DAC9599F14}" name="Assets">
-      <GROUP id="{CCCF89E1-2B49-C01C-3987-6E9E8DBF7C9C}" name="Icons"/>
+      <GROUP id="{CCCF89E1-2B49-C01C-3987-6E9E8DBF7C9C}" name="Icons">
+        <FILE id="LJqNCI" name="play.svg" compile="0" resource="1" file="Assets/Icons/play.svg"/>
+        <FILE id="S5zbO9" name="stop.svg" compile="0" resource="1" file="Assets/Icons/stop.svg"/>
+      </GROUP>
     </GROUP>
     <GROUP id="{CD50F93F-00AB-3895-AE98-63504A084998}" name="Source">
       <FILE id="RhvWvh" name="State.cpp" compile="1" resource="0" file="Source/State.cpp"/>
@@ -13,6 +16,8 @@
       <GROUP id="{3CDDD032-7BC0-DEF9-45D7-AA7959E30D86}" name="Components">
         <FILE id="ZgfCjU" name="Container.h" compile="0" resource="0" file="Source/Components/Container.h"/>
         <FILE id="u9eAyZ" name="Header.h" compile="0" resource="0" file="Source/Components/Header.h"/>
+        <FILE id="kiYw2s" name="TransportButton.h" compile="0" resource="0"
+              file="Source/Components/TransportButton.h"/>
       </GROUP>
       <FILE id="DvZtzi" name="Theme.h" compile="0" resource="0" file="Source/Theme.h"/>
       <FILE id="zaxN31" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

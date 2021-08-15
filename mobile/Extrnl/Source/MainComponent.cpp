@@ -1,6 +1,6 @@
 #include "MainComponent.h"
 
-MainComponent::MainComponent(juce::ValueTree &appState) : localState(appState)
+MainComponent::MainComponent(juce::ValueTree &appState) : localState(appState), container(localState)
 {
     // Setup state listener
     localState.addListener(this);

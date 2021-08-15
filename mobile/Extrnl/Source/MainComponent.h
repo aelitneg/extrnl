@@ -7,7 +7,7 @@
 #include "Components/Container.h"
 #include "Components/Header.h"
 
-class MainComponent : public juce::AudioAppComponent, juce::ValueTree::Listener, State
+class MainComponent : public juce::AudioAppComponent, juce::ValueTree::Listener
 {
 public:
     MainComponent(juce::ValueTree &appState);

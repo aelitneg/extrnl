@@ -3,6 +3,7 @@
 #include <JuceHeader.h>
 
 #include "../Theme.h"
+#include "./SourceList.h"
 #include "./TransportButton.h"
 
 class Container : public juce::Component
@@ -10,8 +11,11 @@ class Container : public juce::Component
 public:
     Container(juce::ValueTree appState)
         : localState(appState),
+          sourceList(localState.getChildWithName(State::selectedSourceStateNode),
+                     localState.getChildWithName(State::sourceListStateNode)),
           transportButton(localState.getChildWithName(State::transportStateNode))
     {
+        addAndMakeVisible(sourceList);
         addAndMakeVisible(transportButton);
     }
 
@@ -22,11 +26,6 @@ public:
     void paint(juce::Graphics &g) override
     {
         g.fillAll(getLookAndFeel().findColour(ThemeColours::darkGray));
-        
-        g.setColour(juce::Colours::white);
-        g.setFont(14.0f);
-        g.drawText("Container", getLocalBounds(),
-                   juce::Justification::centred, true); // draw some placeholder text
     }
 
     void resized() override
@@ -39,7 +38,12 @@ public:
         
         // Add TransportButton to flexBox
         juce::FlexItem flexTransportButton(transportButton);
-        flexBox.items.add(flexTransportButton.withMinWidth(200).withMinHeight(200));
+        flexBox.items.add(flexTransportButton.withWidth(200).withHeight(200).withAlignSelf(juce::FlexItem::AlignSelf::center));
+        
+        // Add SourceList to flexBox
+        int sourceListMargin{40};
+        juce::FlexItem flexSourceList(sourceList);
+        flexBox.items.add(flexSourceList.withWidth(getWidth() - sourceListMargin).withMinHeight(50).withMargin(sourceListMargin));
         
         // Draw flexbox layout
         int padding{20};
@@ -53,6 +57,7 @@ public:
 private:
     juce::ValueTree localState;
     
+    SourceList sourceList;
     TransportButton transportButton;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Container)

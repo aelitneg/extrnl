@@ -15,4 +15,9 @@ public:
     static juce::Identifier appStateNode;
     static juce::Identifier transportStateNode;
     static juce::Identifier transportState;
+    static juce::Identifier selectedSourceStateNode;
+    static juce::Identifier sourceListStateNode;
+    static juce::Identifier sourceNode;
+    static juce::Identifier sourceId;
+    static juce::Identifier sourceName;
 };

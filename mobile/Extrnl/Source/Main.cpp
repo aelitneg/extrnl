@@ -22,6 +22,11 @@ public:
         appState.getChildWithName(State::transportStateNode).setProperty(State::transportState,
                                                                          State::TransportState::Stopped,
                                                                          nullptr);
+        // Initialise selected source state
+        appState.addChild(juce::ValueTree(State::selectedSourceStateNode), -1, nullptr);
+        
+        // Initialise source list state
+        appState.addChild(juce::ValueTree(State::sourceListStateNode), -1, nullptr);
         
         
         mainWindow.reset(new MainWindow(getApplicationName(), appState));

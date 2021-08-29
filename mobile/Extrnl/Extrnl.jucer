@@ -11,6 +11,12 @@
       </GROUP>
     </GROUP>
     <GROUP id="{CD50F93F-00AB-3895-AE98-63504A084998}" name="Source">
+      <GROUP id="{BC2FAFFF-79FB-3550-63F0-973EED342F34}" name="App">
+        <FILE id="NUxCKt" name="Extrnl.cpp" compile="1" resource="0" file="Source/App/Extrnl.cpp"/>
+        <FILE id="VRjTSp" name="Extrnl.h" compile="0" resource="0" file="Source/App/Extrnl.h"/>
+        <FILE id="umoYsU" name="Source.cpp" compile="1" resource="0" file="Source/App/Source.cpp"/>
+        <FILE id="S5ssiA" name="Source.h" compile="0" resource="0" file="Source/App/Source.h"/>
+      </GROUP>
       <FILE id="RhvWvh" name="State.cpp" compile="1" resource="0" file="Source/State.cpp"/>
       <FILE id="dU9OJj" name="State.h" compile="0" resource="0" file="Source/State.h"/>
       <FILE id="RHH5Ho" name="FontAwesome.h" compile="0" resource="0" file="Source/FontAwesome.h"/>

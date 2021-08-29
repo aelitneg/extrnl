@@ -2,6 +2,7 @@
 
 #include "State.h"
 #include "MainComponent.h"
+#include "./App/Extrnl.h"
 
 class ExtrnlApplication : public juce::JUCEApplication
 {
@@ -28,7 +29,11 @@ public:
         // Initialise source list state
         appState.addChild(juce::ValueTree(State::sourceListStateNode), -1, nullptr);
         
+        // Initialise app
+        extrnl.reset(new Extrnl());
+        extrnl.get()->initialiseState(appState);
         
+        // Initialise UI
         mainWindow.reset(new MainWindow(getApplicationName(), appState));
     }
 
@@ -79,6 +84,7 @@ public:
 private:
     juce::ValueTree appState;
     std::unique_ptr<MainWindow> mainWindow;
+    std::unique_ptr<Extrnl> extrnl;
 };
 
 // This macro generates the main() routine that launches the app.

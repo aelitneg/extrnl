@@ -17,6 +17,12 @@ public:
           sourceDetail(localState.getChildWithName(State::selectedSourceStateNode)),
           transportButton(localState.getChildWithName(State::transportStateNode))
     {
+        // Initialise flexbox
+        flexBox.flexDirection = juce::FlexBox::Direction::column;
+        flexBox.alignContent = juce::FlexBox::AlignContent::center;
+        flexBox.alignItems = juce::FlexBox::AlignItems::center;
+
+        // Initialise child components
         addAndMakeVisible(sourceList);
         addAndMakeVisible(sourceDetail);
         addAndMakeVisible(transportButton);
@@ -33,37 +39,31 @@ public:
 
     void resized() override
     {
-        // Initialise flexBox
-        juce::FlexBox flexBox;
-        flexBox.flexDirection = juce::FlexBox::Direction::column;
-        flexBox.alignContent = juce::FlexBox::AlignContent::center;
-        flexBox.alignItems = juce::FlexBox::AlignItems::center;
-
         // Add TransportButton to flexBox
         juce::FlexItem flexTransportButton(transportButton);
-        flexBox.items.add(flexTransportButton.withWidth(200).withHeight(200).withAlignSelf(juce::FlexItem::AlignSelf::center));
+        flexBox.items.add(flexTransportButton.withWidth(200).withHeight(200).withMargin(componentMargin).withAlignSelf(juce::FlexItem::AlignSelf::center));
 
         // Add SourceList to flexBox
-        int sourceListMargin{40};
         juce::FlexItem flexSourceList(sourceList);
-        flexBox.items.add(flexSourceList.withWidth(getWidth() - sourceListMargin).withMinHeight(50).withMargin(sourceListMargin));
+        flexBox.items.add(flexSourceList.withWidth(getWidth() - (componentMargin.left + componentMargin.right)).withMinHeight(50).withMargin(componentMargin));
 
         // Add SourceDetail to flexBox
-        juce::FlexItem::Margin sourceDetailMargin(0, 40, 20, 40);
         juce::FlexItem flexSourceDetail(sourceDetail);
-        flexBox.items.add(flexSourceDetail.withMargin(sourceDetailMargin).withFlex(1));
+        flexBox.items.add(flexSourceDetail.withMargin(componentMargin).withFlex(1));
 
         // Draw flexbox layout
-        int padding{20};
-        int marginY{40};
-        flexBox.performLayout(juce::Rectangle<int>(padding / 2,
-                                                   marginY + padding / 2,
-                                                   getWidth() - padding,
-                                                   getHeight() - marginY - padding));
+        flexBox.performLayout(juce::Rectangle<int>(margin.left,
+                                                   margin.top,
+                                                   getWidth() - (margin.left + margin.right),
+                                                   getHeight() - (margin.top + margin.bottom)));
     }
 
 private:
     juce::ValueTree localState;
+
+    juce::FlexBox flexBox;
+    juce::FlexItem::Margin margin{30, 10, 10, 10};
+    juce::FlexItem::Margin componentMargin{20};
 
     SourceList sourceList;
     SourceDetail sourceDetail;

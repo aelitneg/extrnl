@@ -19,8 +19,6 @@ void Extrnl::initialiseState(juce::ValueTree appState)
 
 void Extrnl::valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child)
 {
-    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::valueTreeChildAdded");
-
     juce::Identifier type(parent.getType());
 
     if (type == State::selectedSourceStateNode)
@@ -31,7 +29,6 @@ void Extrnl::valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child
 
 void Extrnl::valueTreeChildRemoved(juce::ValueTree &parent, juce::ValueTree &child, int index)
 {
-    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::valueTreeChildRemoved");
 }
 
 void Extrnl::valueTreePropertyChanged(juce::ValueTree &node, const juce::Identifier &property)
@@ -73,13 +70,11 @@ void Extrnl::transportStateChanged(juce::ValueTree &node, const juce::Identifier
 
 void Extrnl::play()
 {
-    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::play");
     transportState = State::TransportState::Playing;
 }
 
 void Extrnl::stop()
 {
-    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::stop");
     transportState = State::TransportState::Stopped;
 }
 

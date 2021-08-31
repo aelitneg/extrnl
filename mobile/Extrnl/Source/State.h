@@ -9,7 +9,9 @@ public:
     enum TransportState
     {
         Stopped,
+        Starting,
         Playing,
+        Stopping
     };
 
     // State Identifiers

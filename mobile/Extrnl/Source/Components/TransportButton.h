@@ -67,8 +67,10 @@ public:
         switch ((State::TransportState)(int)transportState.getProperty(State::transportState))
         {
         case State::TransportState::Stopped:
+        case State::TransportState::Starting:
             return playIcon;
         case State::TransportState::Playing:
+        case State::TransportState::Stopping:
             return stopIcon;
         }
     }
@@ -86,10 +88,14 @@ public:
         switch ((State::TransportState)(int)transportState.getProperty(State::transportState))
         {
         case State::TransportState::Stopped:
-            transportState.setProperty(State::transportState, State::TransportState::Playing, nullptr);
+            transportState.setProperty(State::transportState, State::TransportState::Starting, nullptr);
+            break;
+        case State::TransportState::Starting:
             break;
         case State::TransportState::Playing:
-            transportState.setProperty(State::transportState, State::TransportState::Stopped, nullptr);
+            transportState.setProperty(State::transportState, State::TransportState::Stopping, nullptr);
+            break;
+        case State::TransportState::Stopping:
             break;
         }
     }

@@ -59,10 +59,14 @@ void Extrnl::transportStateChanged(juce::ValueTree &node, const juce::Identifier
 {
     switch ((State::TransportState)(int)node.getProperty(property))
     {
-    case State::TransportState::Playing:
+    case State::TransportState::Stopped:
+        break;
+    case State::TransportState::Starting:
         play();
         break;
-    case State::TransportState::Stopped:
+    case State::TransportState::Playing:
+        break;
+    case State::TransportState::Stopping:
         stop();
         break;
     }
@@ -71,11 +75,13 @@ void Extrnl::transportStateChanged(juce::ValueTree &node, const juce::Identifier
 void Extrnl::play()
 {
     transportState = State::TransportState::Playing;
+    localState.getChildWithName(State::transportStateNode).setProperty(State::transportState, transportState, nullptr);
 }
 
 void Extrnl::stop()
 {
     transportState = State::TransportState::Stopped;
+    localState.getChildWithName(State::transportStateNode).setProperty(State::transportState, transportState, nullptr);
 }
 
 // TODO: Remove mockData

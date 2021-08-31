@@ -4,17 +4,17 @@ MainComponent::MainComponent(juce::ValueTree &appState) : localState(appState), 
 {
     // Setup state listener
     localState.addListener(this);
-    
+
     // Apply theme
     setLookAndFeel(&theme);
-    
+
     // Add child components
     addAndMakeVisible(header);
     addAndMakeVisible(container);
 
     // Set size of component after adding child components
     setSize(getParentWidth(), getParentHeight());
-    
+
     // Setup audio (no inputs)
     setAudioChannels(0, 2);
 }
@@ -22,7 +22,7 @@ MainComponent::MainComponent(juce::ValueTree &appState) : localState(appState), 
 MainComponent::~MainComponent()
 {
     shutdownAudio();
-    
+
     // Cleanup theme
     setLookAndFeel(nullptr);
 }
@@ -54,7 +54,7 @@ void MainComponent::resized()
 {
     // Called when mainContentComponent is resized
     // Update positions of child components here
-    
+
     // Get SafeArea Insets for main display
     juce::BorderSize<int> safeAreaInsets;
     juce::Array<juce::Displays::Display> displays = juce::Desktop::getInstance().getDisplays().displays;
@@ -65,20 +65,19 @@ void MainComponent::resized()
             safeAreaInsets = it->safeAreaInsets;
         }
     }
-    
+
     // Draw header
     header.setBounds(getX() + safeAreaInsets.getLeft(),
                      getY() + safeAreaInsets.getTop(),
                      getWidth() - safeAreaInsets.getLeftAndRight(),
                      60);
-    
+
     // Draw container
     container.setBounds(getX(),
                         header.getBottom(),
                         getWidth() - safeAreaInsets.getLeftAndRight(),
                         getHeight() - header.getHeight() - safeAreaInsets.getTopAndBottom());
 }
-
 
 void MainComponent::valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child)
 {

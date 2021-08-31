@@ -6,11 +6,12 @@ class State
 {
 public:
     // Enums
-    enum TransportState {
+    enum TransportState
+    {
         Stopped,
         Playing,
     };
-    
+
     // State Identifiers
     static juce::Identifier appStateNode;
     static juce::Identifier transportStateNode;

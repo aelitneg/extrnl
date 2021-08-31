@@ -32,42 +32,42 @@ public:
         setColour(ThemeColours::darkGray, darkGray);
         setColour(ThemeColours::black, black);
         setColour(ThemeColours::blackWithOpacity, blackWithOpacity);
-        
+
         // Override JUCE colours
         // Background
         setColour(juce::ResizableWindow::backgroundColourId, darkGray);
-        
+
         // ComboBox
         setColour(juce::ComboBox::ColourIds::backgroundColourId, lightGray);
         setColour(juce::ComboBox::ColourIds::textColourId, black);
         setColour(juce::ComboBox::ColourIds::outlineColourId, black);
         setColour(juce::ComboBox::ColourIds::arrowColourId, black);
-        
+
         // Label
         setColour(juce::Label::ColourIds::textColourId, black);
-        
+
         // PopupMenu
         setColour(juce::PopupMenu::ColourIds::backgroundColourId, lightGray);
         setColour(juce::PopupMenu::ColourIds::textColourId, black);
     }
-    
-    juce::Font getComboBoxFont(juce::ComboBox& comboBox) override
+
+    juce::Font getComboBoxFont(juce::ComboBox &comboBox) override
     {
         return getFont();
     }
-    
+
     juce::Font getPopupMenuFont() override
     {
         return getFont();
     }
-    
+
     juce::Font getLabelFont(juce::Label &label) override
     {
         juce::Font labelFont = getFont();
         labelFont.setBold(true);
         return labelFont;
     }
-    
+
     void drawPopupMenuItemWithOptions(juce::Graphics &g,
                                       const juce::Rectangle<int> &area,
                                       bool isHighlighted,
@@ -77,38 +77,35 @@ public:
         // Use Flexbox layout
         juce::FlexBox flexBox;
         int padding{10};
-        
+
         if (isHighlighted)
         {
             // Add container for icon
             juce::FlexItem icon;
             flexBox.items.add(icon.withWidth(30));
         }
-        
+
         // Add container for label
         juce::FlexItem label;
         flexBox.items.add(label.withFlex(1).withMargin(padding));
-        
+
         // Calculate container sizes
         flexBox.performLayout(juce::Rectangle<float>(padding,
                                                      padding,
                                                      area.getWidth() - padding * 2,
                                                      area.getHeight() - padding * 2));
-        
+
         if (isHighlighted)
         {
             // Draw icon
-            FontAwesome::getDrawable("volume-up")->drawWithin(g,
-                                                              flexBox.items[0].currentBounds,
-                                                              juce::RectanglePlacement(),
-                                                              1.0f);
+            FontAwesome::getDrawable("volume-up")->drawWithin(g, flexBox.items[0].currentBounds, juce::RectanglePlacement(), 1.0f);
         }
-        
+
         // Draw label
         g.setColour(black);
         g.setFont(getPopupMenuFont());
         g.drawText(item.text, flexBox.items[isHighlighted ? 1 : 0].currentBounds, juce::Justification::left);
-        
+
         // Draw separator
         g.setColour(darkGray);
         g.drawLine(area.getX(),
@@ -117,7 +114,7 @@ public:
                    area.getY() + area.getHeight(),
                    1.0f);
     }
-    
+
     static juce::Font getBaseFont()
     {
         return juce::Font("Helvetica Neue", "Regular", 17.f);
@@ -133,9 +130,9 @@ private:
     juce::Colour darkGray{143, 143, 143};
     juce::Colour black{0, 0, 0};
     juce::Colour blackWithOpacity{(juce::uint8)0, (juce::uint8)0, (juce::uint8)0, 0.5f};
-    
+
     juce::Font getFont()
     {
-        return juce::Font ("Helvetica Neue", "Regular", 17.f);
+        return juce::Font("Helvetica Neue", "Regular", 17.f);
     }
 };

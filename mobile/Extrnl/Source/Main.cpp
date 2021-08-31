@@ -17,22 +17,20 @@ public:
     {
         // Initialise app state
         appState = juce::ValueTree(State::appStateNode);
-        
+
         // Initialise transport state
         appState.addChild(juce::ValueTree(State::transportStateNode), -1, nullptr);
-        appState.getChildWithName(State::transportStateNode).setProperty(State::transportState,
-                                                                         State::TransportState::Stopped,
-                                                                         nullptr);
+        appState.getChildWithName(State::transportStateNode).setProperty(State::transportState, State::TransportState::Stopped, nullptr);
         // Initialise selected source state
         appState.addChild(juce::ValueTree(State::selectedSourceStateNode), -1, nullptr);
-        
+
         // Initialise source list state
         appState.addChild(juce::ValueTree(State::sourceListStateNode), -1, nullptr);
-        
+
         // Initialise app
         extrnl.reset(new Extrnl());
         extrnl.get()->initialiseState(appState);
-        
+
         // Initialise UI
         mainWindow.reset(new MainWindow(getApplicationName(), appState));
     }

@@ -21,6 +21,7 @@ public:
         // Initialise transport state
         appState.addChild(juce::ValueTree(State::transportStateNode), -1, nullptr);
         appState.getChildWithName(State::transportStateNode).setProperty(State::transportState, State::TransportState::Stopped, nullptr);
+
         // Initialise selected source state
         appState.addChild(juce::ValueTree(State::selectedSourceStateNode), -1, nullptr);
 

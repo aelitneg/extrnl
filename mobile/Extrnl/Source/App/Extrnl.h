@@ -5,7 +5,7 @@
 #include <JuceHeader.h>
 
 #include "../State.h"
-#include "./Source.h"
+#include "Source.h"
 
 class Extrnl : public juce::ValueTree::Listener
 {

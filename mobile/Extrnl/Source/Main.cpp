@@ -2,7 +2,7 @@
 
 #include "State.h"
 #include "MainComponent.h"
-#include "./App/Extrnl.h"
+#include "App/Extrnl.h"
 
 class ExtrnlApplication : public juce::JUCEApplication
 {

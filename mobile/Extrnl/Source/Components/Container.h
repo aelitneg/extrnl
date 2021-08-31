@@ -3,9 +3,9 @@
 #include <JuceHeader.h>
 
 #include "../Theme.h"
-#include "./SourceList.h"
-#include "./SourceDetail.h"
-#include "./TransportButton.h"
+#include "SourceList.h"
+#include "SourceDetail.h"
+#include "TransportButton.h"
 
 class Container : public juce::Component
 {

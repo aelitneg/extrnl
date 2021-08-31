@@ -1,6 +1,5 @@
 #pragma once
 
-#include <array>
 #include <JuceHeader.h>
 
 #include "../Theme.h"

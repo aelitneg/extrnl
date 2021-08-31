@@ -2,9 +2,6 @@
 
 MainComponent::MainComponent(juce::ValueTree &appState) : localState(appState), container(localState)
 {
-    // Setup state listener
-    localState.addListener(this);
-
     // Apply theme
     setLookAndFeel(&theme);
 
@@ -77,12 +74,4 @@ void MainComponent::resized()
                         header.getBottom(),
                         getWidth() - safeAreaInsets.getLeftAndRight(),
                         getHeight() - header.getHeight() - safeAreaInsets.getTopAndBottom());
-}
-
-void MainComponent::valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child)
-{
-}
-
-void MainComponent::valueTreeChildRemoved(juce::ValueTree &parent, juce::ValueTree &child, int index)
-{
 }

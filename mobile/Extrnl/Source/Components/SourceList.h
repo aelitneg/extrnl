@@ -26,6 +26,9 @@ public:
 
     ~SourceList() override
     {
+        // Cleanup listeners
+        sourceList.removeListener(this);
+        removeListener(this);
     }
 
     void comboBoxChanged(juce::ComboBox *comboBox) override

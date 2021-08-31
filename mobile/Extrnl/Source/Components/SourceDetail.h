@@ -32,6 +32,8 @@ public:
 
     ~SourceDetail() override
     {
+        // Cleanup listener
+        selectedSource.removeListener(this);
     }
 
     void paint(juce::Graphics &g) override

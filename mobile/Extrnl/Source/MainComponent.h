@@ -7,7 +7,7 @@
 #include "Components/Container.h"
 #include "Components/Header.h"
 
-class MainComponent : public juce::AudioAppComponent, juce::ValueTree::Listener
+class MainComponent : public juce::AudioAppComponent
 {
 public:
     MainComponent(juce::ValueTree &appState);
@@ -19,9 +19,6 @@ public:
 
     void paint(juce::Graphics &g) override;
     void resized() override;
-
-    void valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child) override;
-    void valueTreeChildRemoved(juce::ValueTree &parent, juce::ValueTree &child, int index) override;
 
 private:
     juce::ValueTree localState;

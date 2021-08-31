@@ -34,6 +34,14 @@ void Extrnl::valueTreeChildRemoved(juce::ValueTree &parent, juce::ValueTree &chi
     juce::Logger::getCurrentLogger()->writeToLog("Extrnl::valueTreeChildRemoved");
 }
 
+void Extrnl::valueTreePropertyChanged(juce::ValueTree &node, const juce::Identifier &property)
+{
+    if (node.getType() == State::transportStateNode)
+    {
+        transportStateChanged(node, property);
+    }
+}
+
 void Extrnl::selectedSourceChanged()
 {
     // Get current source ID
@@ -50,6 +58,31 @@ void Extrnl::selectedSourceChanged()
             return;
         }
     }
+}
+
+void Extrnl::transportStateChanged(juce::ValueTree &node, const juce::Identifier &property)
+{
+    switch((State::TransportState)(int)node.getProperty(property))
+    {
+        case State::TransportState::Playing:
+            play();
+            break;
+        case State::TransportState::Stopped:
+            stop();
+            break;
+    }
+}
+
+void Extrnl::play()
+{
+    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::play");
+    transportState = State::TransportState::Playing;
+}
+
+void Extrnl::stop()
+{
+    juce::Logger::getCurrentLogger()->writeToLog("Extrnl::stop");
+    transportState = State::TransportState::Stopped;
 }
 
 // TODO: Remove mockData

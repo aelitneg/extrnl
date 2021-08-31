@@ -49,8 +49,8 @@ public:
         g.fillAll(getLookAndFeel().findColour(shouldDrawButtonAsDown ? ThemeColours::lightGrayWithOpacity : ThemeColours::lightGray));
         
         // Draw border
-        g.setColour (getLookAndFeel().findColour(shouldDrawButtonAsDown ? ThemeColours::blackWithOpacity : ThemeColours::black));
-        g.drawRect (getLocalBounds(), 2);
+        g.setColour(getLookAndFeel().findColour(shouldDrawButtonAsDown ? ThemeColours::blackWithOpacity : ThemeColours::black));
+        g.drawRect(getLocalBounds(), 2);
         
         // Draw icon
         icon = getIcon();
@@ -72,7 +72,7 @@ public:
         }
     }
     
-    void valueTreePropertyChanged (juce::ValueTree &transportStateNode, const juce::Identifier &property) override
+    void valueTreePropertyChanged(juce::ValueTree &transportStateNode, const juce::Identifier &property) override
     {
         if (property == State::transportState) {
             repaint();

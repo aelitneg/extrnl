@@ -18,7 +18,8 @@ public:
     // State listener callbacks
     void valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child) override;
     void valueTreeChildRemoved(juce::ValueTree &parent, juce::ValueTree &child, int index) override;
-    
+    void valueTreePropertyChanged(juce::ValueTree &node, const juce::Identifier &property) override;
+
     // TODO: Remove mock data
     void mockData();
 
@@ -27,6 +28,11 @@ private:
     
     std::vector<std::unique_ptr<Source>> sources;
     std::unique_ptr<Source> selectedSource;
+    State::TransportState transportState;
     
     void selectedSourceChanged();
+    void transportStateChanged(juce::ValueTree &node, const juce::Identifier &property);
+    
+    void play();
+    void stop();
 };

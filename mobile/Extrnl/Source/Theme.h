@@ -43,19 +43,29 @@ public:
         setColour(juce::ComboBox::ColourIds::outlineColourId, black);
         setColour(juce::ComboBox::ColourIds::arrowColourId, black);
         
+        // Label
+        setColour(juce::Label::ColourIds::textColourId, black);
+        
         // PopupMenu
         setColour(juce::PopupMenu::ColourIds::backgroundColourId, lightGray);
         setColour(juce::PopupMenu::ColourIds::textColourId, black);
     }
     
-    juce::Font getComboBoxFont (juce::ComboBox& comboBox) override
+    juce::Font getComboBoxFont(juce::ComboBox& comboBox) override
     {
         return getFont();
     }
     
-    juce::Font getPopupMenuFont () override
+    juce::Font getPopupMenuFont() override
     {
         return getFont();
+    }
+    
+    juce::Font getLabelFont(juce::Label &label) override
+    {
+        juce::Font labelFont = getFont();
+        labelFont.setBold(true);
+        return labelFont;
     }
     
     void drawPopupMenuItemWithOptions(juce::Graphics &g,
@@ -106,6 +116,11 @@ public:
                    area.getWidth(),
                    area.getY() + area.getHeight(),
                    1.0f);
+    }
+    
+    static juce::Font getBaseFont()
+    {
+        return juce::Font("Helvetica Neue", "Regular", 17.f);
     }
 
 private:

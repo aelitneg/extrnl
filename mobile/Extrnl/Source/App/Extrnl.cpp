@@ -44,7 +44,7 @@ void Extrnl::selectedSourceChanged()
     // Iterate through sources to find ID and set selected source
     for (auto it = sources.begin(); it != sources.end(); it++)
     {
-        if (it->get()->id == sourceId)
+        if (it->get()->getId() == sourceId)
         {
             selectedSource.reset(it->get());
             return;
@@ -57,16 +57,25 @@ void Extrnl::mockData()
 {
     juce::ValueTree sourceListState = localState.getChildWithName(State::sourceListStateNode);
     
-    juce::String mocks[3]{"2TRK", "Kick", "Bass"};
-    for (int i = 0; i < sizeof(mocks) / sizeof(juce::String); i++)
+    std::vector<std::unique_ptr<Source>> mockSources;
+    
+    mockSources.push_back(std::unique_ptr<Source>(new Source(0, "2TRK", 48000, false, 24, 512)));
+    mockSources.push_back(std::unique_ptr<Source>(new Source(1, "Kick", 44100, true, 16, 512)));
+    mockSources.push_back(std::unique_ptr<Source>(new Source(2, "Bass", 44100, true, 16, 512)));
+    
+    for (auto it = mockSources.begin(); it != mockSources.end(); it++)
     {
-        std::unique_ptr<Source> mock(new Source((i + 1),mocks[i]));
-        
         juce::ValueTree mockNode(State::sourceNode);
-        mockNode.setProperty(State::sourceId, i + 1, nullptr);
-        mockNode.setProperty(State::sourceName, mocks[i], nullptr);
+        
+        mockNode.setProperty(State::sourceId, it->get()->getId() + 1, nullptr);
+        mockNode.setProperty(State::sourceName, it->get()->getName(), nullptr);
+        mockNode.setProperty(State::sourceSampleRate, it->get()->getSampleRate(), nullptr);
+        mockNode.setProperty(State::sourceSampleRateConversion, it->get()->getSampleRateConversion(), nullptr);
+        mockNode.setProperty(State::sourceBitDepth, it->get()->getBitDepth(), nullptr);
+        mockNode.setProperty(State::sourceBufferLength, it->get()->getBufferLength(), nullptr);
+        
         sourceListState.addChild(mockNode, -1, nullptr);
         
-        sources.push_back(std::unique_ptr<Source>(mock.release()));
+        sources.push_back(std::unique_ptr<Source>(it->release()));
     }
 }

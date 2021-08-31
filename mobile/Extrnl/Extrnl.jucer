@@ -23,6 +23,7 @@
       <GROUP id="{3CDDD032-7BC0-DEF9-45D7-AA7959E30D86}" name="Components">
         <FILE id="ZgfCjU" name="Container.h" compile="0" resource="0" file="Source/Components/Container.h"/>
         <FILE id="u9eAyZ" name="Header.h" compile="0" resource="0" file="Source/Components/Header.h"/>
+        <FILE id="OlcleC" name="SourceDetail.h" compile="0" resource="0" file="Source/Components/SourceDetail.h"/>
         <FILE id="N3voS7" name="SourceList.h" compile="0" resource="0" file="Source/Components/SourceList.h"/>
         <FILE id="kiYw2s" name="TransportButton.h" compile="0" resource="0"
               file="Source/Components/TransportButton.h"/>

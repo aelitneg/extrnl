@@ -20,4 +20,8 @@ public:
     static juce::Identifier sourceNode;
     static juce::Identifier sourceId;
     static juce::Identifier sourceName;
+    static juce::Identifier sourceSampleRate;
+    static juce::Identifier sourceSampleRateConversion;
+    static juce::Identifier sourceBitDepth;
+    static juce::Identifier sourceBufferLength;
 };

@@ -4,6 +4,7 @@
 
 #include "../Theme.h"
 #include "./SourceList.h"
+#include "./SourceDetail.h"
 #include "./TransportButton.h"
 
 class Container : public juce::Component
@@ -13,9 +14,11 @@ public:
         : localState(appState),
           sourceList(localState.getChildWithName(State::selectedSourceStateNode),
                      localState.getChildWithName(State::sourceListStateNode)),
+          sourceDetail(localState.getChildWithName(State::selectedSourceStateNode)),
           transportButton(localState.getChildWithName(State::transportStateNode))
     {
         addAndMakeVisible(sourceList);
+        addAndMakeVisible(sourceDetail);
         addAndMakeVisible(transportButton);
     }
 
@@ -45,6 +48,11 @@ public:
         juce::FlexItem flexSourceList(sourceList);
         flexBox.items.add(flexSourceList.withWidth(getWidth() - sourceListMargin).withMinHeight(50).withMargin(sourceListMargin));
         
+        // Add SourceDetail to flexBox
+        juce::FlexItem::Margin sourceDetailMargin(0, 40, 20, 40);
+        juce::FlexItem flexSourceDetail(sourceDetail);
+        flexBox.items.add(flexSourceDetail.withMargin(sourceDetailMargin).withFlex(1));
+        
         // Draw flexbox layout
         int padding{20};
         int marginY{40};
@@ -58,6 +66,7 @@ private:
     juce::ValueTree localState;
     
     SourceList sourceList;
+    SourceDetail sourceDetail;
     TransportButton transportButton;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(Container)

@@ -9,6 +9,9 @@ class Header : public juce::Component
 public:
     Header()
     {
+        // Configure font
+        font.setHeight(20.0f);
+        font.setBold(true);
     }
 
     ~Header() override
@@ -32,8 +35,6 @@ public:
         g.fillRect(headerRect);
 
         // Draw title
-        font.setHeight(20.0f);
-        font.setBold(true);
         g.setFont(font);
         g.setColour(getLookAndFeel().findColour(ThemeColours::black));
         g.drawText("extrnl", headerRect, juce::Justification::centred, true);

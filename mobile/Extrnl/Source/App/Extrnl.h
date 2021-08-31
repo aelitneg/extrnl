@@ -30,7 +30,7 @@ private:
     std::unique_ptr<Source> selectedSource;
     State::TransportState transportState;
 
-    void selectedSourceChanged();
+    void selectedSourceChanged(juce::ValueTree &sourceNode);
     void transportStateChanged(juce::ValueTree &node, const juce::Identifier &property);
 
     void play();

@@ -25,7 +25,7 @@ void Extrnl::valueTreeChildAdded(juce::ValueTree &parent, juce::ValueTree &child
 
     if (type == State::selectedSourceStateNode)
     {
-        return selectedSourceChanged();
+        return selectedSourceChanged(child);
     }
 }
 
@@ -42,12 +42,10 @@ void Extrnl::valueTreePropertyChanged(juce::ValueTree &node, const juce::Identif
     }
 }
 
-void Extrnl::selectedSourceChanged()
+void Extrnl::selectedSourceChanged(juce::ValueTree &sourceNode)
 {
     // Get current source ID
-    int sourceId = localState.getChildWithName(State::selectedSourceStateNode)
-                       .getChild(0)
-                       .getProperty(State::sourceId);
+    int sourceId = sourceNode.getProperty(State::sourceId);
 
     // Iterate through sources to find ID and set selected source
     for (auto it = sources.begin(); it != sources.end(); it++)

@@ -6,7 +6,11 @@ import Layout from '../../components/Layout';
 
 const useStyles = makeStyles({
     image: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         borderRadius: 4,
+        maxHeight: 400,
     },
 });
 
@@ -15,11 +19,7 @@ export default function Post({ post }) {
 
     return (
         <Layout>
-            <img
-                className={classes.image}
-                width={'100%'}
-                src={post.feature_image}
-            />
+            <img className={classes.image} src={post.feature_image} />
             <Box mt={2} mb={4}>
                 <Typography variant="h4">{post.title}</Typography>
                 <Typography variant="subtitle2">

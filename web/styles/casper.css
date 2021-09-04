@@ -1,0 +1,107 @@
+/*
+/* Casper Theme for Ghost
+/* Image Gallery Support
+/* https://github.com/TryGhost/Casper/blob/main/assets/css/screen.css
+/*
+
+/* Cards
+/* ---------------------------------------------------------- */
+
+/* Cards are dynamic blocks of content which appear within Ghost
+posts, for example: embedded videos, tweets, galleries, or
+specially styled bookmark links. We add extra styling here to
+make sure they look good, and are given a bit of extra spacing. */
+
+/* Add extra margin before/after any cards,
+except for when immediately preceeded by a heading */
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 6vmin;
+    margin-bottom: 0;
+}
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 6vmin;
+    margin-bottom: 0;
+}
+
+/* This keeps small embeds centered */
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* This keeps small iamges centered */
+.kg-image-card img {
+    margin: auto;
+}
+
+/* Captions */
+figcaption {
+    padding: 1.5rem 1.5rem 0;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.4em;
+}
+figcaption strong {
+    color: rgba(0, 0, 0, 0.8);
+}
+figcaption a {
+    color: var(--ghost-accent-color);
+}
+
+/* Highly specific styles for traditional Instagram embeds */
+iframe.instagram-media {
+    margin-top: 6vmin !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 0 !important;
+}
+
+iframe.instagram-media + script + :not([id]) {
+    margin-top: 6vmin;
+}
+
+/* Galleries
+/* ---------------------------------------------------------- */
+
+/* When there galleries are mixed with images, reduce margin
+between them, so it looks like 1 big gallery */
+.kg-image-card + .kg-gallery-card,
+.kg-gallery-card + .kg-image-card,
+.kg-gallery-card + .kg-gallery-card {
+    margin-top: 0.75em;
+}
+
+.kg-image-card.kg-card-hascaption + .kg-gallery-card,
+.kg-gallery-card.kg-card-hascaption + .kg-image-card,
+.kg-gallery-card.kg-card-hascaption + .kg-gallery-card {
+    margin-top: 1.75em;
+}
+
+.kg-gallery-container {
+    position: relative;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.kg-gallery-image img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+    margin: 0.75em 0 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+    margin: 0 0 0 0.75em;
+}

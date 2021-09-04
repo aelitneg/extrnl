@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import '../styles/globals.css';
+import '../styles/casper.css';
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {

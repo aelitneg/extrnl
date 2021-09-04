@@ -13,8 +13,11 @@ import { renderDate } from '../lib/dateUtils';
 
 const useStyles = makeStyles({
     media: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         maxWidth: '100%',
-        height: 'auto',
+        maxHeight: 150,
         borderRadius: 4,
     },
 });
@@ -32,9 +35,9 @@ export default function PostCard({ post }) {
                                 item
                                 sm={3}
                                 xs={12}
-                                justify={'center'}
-                                alignContent={'center'}
-                                alignItems={'center'}
+                                justify="center"
+                                alignContent="center"
+                                alignItems="center"
                             >
                                 <img
                                     className={classes.media}

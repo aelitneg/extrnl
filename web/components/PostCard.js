@@ -11,15 +11,20 @@ import Link from 'next/link';
 
 import { renderDate } from '../lib/dateUtils';
 
-const useStyles = makeStyles({
-    media: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        maxWidth: '100%',
-        maxHeight: 150,
-        borderRadius: 4,
-    },
+const useStyles = makeStyles((theme) => {
+    return {
+        media: {
+            display: 'block',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            maxWidth: '100%',
+            maxHeight: 150,
+            borderRadius: 4,
+            [theme.breakpoints.down('sm')]: {
+                maxHeight: '100%',
+            },
+        },
+    };
 });
 
 export default function PostCard({ post }) {

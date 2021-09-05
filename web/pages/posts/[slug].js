@@ -27,6 +27,7 @@ const useStyles = makeStyles({
         marginRight: 'auto',
         borderRadius: 4,
         maxHeight: 400,
+        maxWidth: '100%',
     },
     content: {
         '& img': {

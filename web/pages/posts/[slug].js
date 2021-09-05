@@ -20,23 +20,35 @@ const resizeImagesInGalleries = () => {
     });
 };
 
-const useStyles = makeStyles({
-    image: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        borderRadius: 4,
-        maxHeight: 400,
-        maxWidth: '100%',
-    },
-    content: {
-        '& img': {
+const useStyles = makeStyles((theme) => {
+    return {
+        image: {
             display: 'block',
             marginLeft: 'auto',
             marginRight: 'auto',
             borderRadius: 4,
+            maxHeight: 400,
+            maxWidth: '100%',
         },
-    },
+        content: {
+            '& img': {
+                display: 'block',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                borderRadius: 4,
+                maxWidth: '100%',
+                width: 'auto',
+                height: 'auto',
+            },
+            '& iframe': {
+                [theme.breakpoints.down('xs')]: {
+                    maxHeight: '100%',
+                    height: 'auto',
+                    width: 'auto',
+                },
+            },
+        },
+    };
 });
 
 export default function Post({ post }) {

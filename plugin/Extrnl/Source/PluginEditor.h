@@ -2,6 +2,8 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "Theme.h"
+#include "Components/Container.h"
 
 class ExtrnlAudioProcessorEditor : public juce::AudioProcessorEditor
 {
@@ -13,9 +15,12 @@ public:
     void resized() override;
 
 private:
-    // This reference is provided as a quick way for your editor to
-    // access the processor object that created it.
     ExtrnlAudioProcessor &audioProcessor;
+    
+    Extrnl::Theme theme;
+    juce::BorderSize<int> margin{25};
+    
+    Extrnl::Container container;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ExtrnlAudioProcessorEditor)
 };

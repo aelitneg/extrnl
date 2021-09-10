@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Extrnl.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../../../../JUCE/extras/AudioPluginHost/Builds/MacOSX/AudioPluginHost.xcodeproj">
+   </FileRef>
+</Workspace>

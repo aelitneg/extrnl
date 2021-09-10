@@ -1,5 +1,12 @@
 #
 # JUCE
 #
-Builds
 JuceLibraryCode
+build
+*.filtergraph
+
+#  Builds/MacOSX
+*.xcodeproj
+xcuserdata
+*.plist
+*.nib

@@ -31,6 +31,11 @@ const useStyles = makeStyles((theme) => {
             maxWidth: '100%',
         },
         content: {
+            '& a': {
+                color: '#197de6',
+                fontWeight: 'bold',
+                textDecoration: 'underline',
+            },
             '& img': {
                 display: 'block',
                 marginLeft: 'auto',
